@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -20,4 +20,6 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
 }
+@import './assets/css/base.scss';
+@import './assets/css/mobile.scss';
 </style>
