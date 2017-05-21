@@ -1,51 +1,19 @@
 
 <template lang="jade">
-  div.container
-    header
-      div.navbar
-        ul
-          li.navbar-item(v-for="(item, index) in navbar")
-            a.menu-item(v-bind:class="{ active: item.checked }")(@click="changeNavbarItem(item, index)"){{item.text}}
-      div.feature
-        div.logo logo
-        div.btn
-          button.btn-primary 登录
-          button.btn-primary 注册
-    div.content
-      div.title {{welInfo}}
-      index-playpng
-      index-content
-    footer
-      div.about
-        span.copyright{{about}}
-        span.support{{support}}
+  div.content
+    index-playpng
+    index-content           
 </template>
 <script>
-import Content from './content/Content.vue'
-import Playpng from './playpng/Playpng.vue'
+import Content from './content/Content'
+import Playpng from './playpng/Playpng'
 export default {
   name: 'index',
   data () {
     return {
-      welInfo: 'Welcome to my hotel App',
-      navbar: [{text: '首页', checked: true},
-              {text: '详细数据', checked: false},
-              {text: '我的信息', checked: false}],
-      navbarActiveIndex: 0,
-      about: '@copyright: 栖居吧宾馆所有',
-      support: '微信: helloMR.W 技术支持'
     }
   },
   methods: {
-    changeNavbarItem: function (item, index) {
-      if (item.checked) {
-        return
-      }
-      this.navbar[this.navbarActiveIndex].checked = false
-      this.navbarActiveIndex = index
-      this.navbar[this.navbarActiveIndex].checked = true
-      this.welInfo = item.text
-    }
   },
   components: {
     'index-content': Content,
@@ -92,7 +60,8 @@ export default {
 }
 footer {
   background: #BBDEFB;
-  width: 95%;
+  width: 100%;
+  margin-top: 150px;
   display: block;
   height: 30px;
   text-align: center;
@@ -106,18 +75,21 @@ footer {
   }
   .navbar {
     width: 100%;
-    .navbar-item {
-      & .menu-item {
-        &.active, &:focus, &:hover {
-          font-size: 1.1em; 
+    & ul{
+      .navbar-item {
+        & .menu-item {
+          &.active, &:focus, &:hover {
+            font-size: 1.1em; 
+          }
         }
       }
     }
   }
   footer {
     position: fixed;
-    bottom: 1px;
-    height: 50px;
+    left: 0px;
+    bottom: 0px;
+    height: 100px;
     .about {
       font-size: 1.1em;
       .copyright {

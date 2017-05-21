@@ -1,13 +1,23 @@
-<template>
-  <div id="app">
-    <!--<img src="./assets/logo.png">-->
-    <router-view></router-view>
-  </div>
+<template lang="jade">
+  div#app
+    //- router-view
+    div.container
+      app-header
+      router-view
+      app-footer
 </template>
 
 <script>
+import Header from './components/header/Header'
+import Index from './components/index/Index'
+import Footer from './components/footer/Footer'
 export default {
-  name: 'app'
+  name: 'app',
+  components: {
+    'app-header': Header,
+    'app-index': Index,
+    'app-footer': Footer
+  }
 }
 </script>
 
@@ -20,6 +30,6 @@ export default {
   color: #2c3e50;
   margin-top: 20px;
 }
-@import './assets/css/base.scss';
-@import './assets/css/mobile.scss';
+@import './assets/styles/plugins/bootstrap/bootstrap.scss';
+@import './assets/styles/custommade/main.scss';
 </style>
