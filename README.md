@@ -1,6 +1,8 @@
 # my-hotel
 
 > A Vue.js project
+## Demo address
+> https://wxhthx.github.io/my-hotel/dist/index.html#/
 
 ## Build Setup
 
