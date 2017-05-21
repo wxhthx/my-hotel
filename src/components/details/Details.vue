@@ -1,19 +1,16 @@
 <template lang="jade">
-  div.playpng 轮播组件
+  div.details 详细信息
 </template>
 <script>
 export default {
+  name: 'details',
   data () {
     return {
-      pngs: []
     }
   }
 }
 </script>
+
 <style lang="scss">
-.playpng {
-    width: 100%;
-    height: 200px;
-    background: #E0F2F1;
-}
+
 </style>

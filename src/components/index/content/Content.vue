@@ -1,6 +1,6 @@
 <template lang="jade">
   div.index-content
-    div(v-for="(item, index) in divObj" v-bind:class="[item.classId]"){{item.name}}
+    div(v-for="(item, index) in divObj" v-bind:class="[item.classId]") {{item.name}}
 </template>
 <script>
 export default {
@@ -28,13 +28,19 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import '../../../assets/styles/custommade/variable.scss';
+$feature-content-height: ($index-content-height / 4);
 .index-content {
-  height: 350px;
+  height: $index-content-height;
 }
 .privilege, .leave, .intro, .round {
   width: 100%;
-  margin: 10px;
-  height: 25%;
+  margin-top: 10px;
+  height: $feature-content-height;
+  line-height: $feature-content-height;
+  color: $font-color;
+  font-size: 2.6em;
+  font-weight: 500;
 }
 .privilege, .round {
     background: #F48FB1;
