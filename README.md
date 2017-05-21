@@ -2,7 +2,8 @@
 
 > A Vue.js project
 ## Demo address
-https://wxhthx.github.io/my-hotel/dist/index.html#/
+> https://wxhthx.github.io/my-hotel/dist/index.html#/
+
 ## Build Setup
 
 ``` bash
