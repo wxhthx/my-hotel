@@ -3,7 +3,7 @@
     //- router-view
     div.container
       app-header
-      v-touch(v-on:swipeleft="onSwipeLeft" v-on:swiperight="swiperight")
+      v-touch.hotel_content(v-on:swipeleft="onSwipeLeft" v-on:swiperight="swiperight")
         router-view
       app-footer
 </template>
@@ -44,6 +44,9 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 20px;
+}
+.hotel_content {
+  margin-top: 30px;
 }
 @import './assets/styles/plugins/bootstrap/bootstrap.scss';
 @import './assets/styles/custommade/main.scss';

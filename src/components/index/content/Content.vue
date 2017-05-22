@@ -52,10 +52,13 @@ $feature-content-height: ($index-content-height / 4);
   %inline-div {
     width: 45%;
     display: inline-block;
-    height: 50%;
+    height: 70%;
     margin: 10px;
-    font-size: 20px;
+    font-size: 3.6em;
+    line-height: 1.1em;
+    padding: 10px;
     color: #fff;
+    border-radius: 30px;
   }
   .privilege, .leave {
       @extend %inline-div;
