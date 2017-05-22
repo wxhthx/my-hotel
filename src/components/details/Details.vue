@@ -11,6 +11,10 @@ export default {
 }
 </script>
 
-<style lang="scss">
-
+<style lang="scss" scoped>
+    .details {
+        width: 100%;
+        height: 600px;
+        background: #B9887D;
+    }
 </style>

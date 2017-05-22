@@ -3,7 +3,8 @@
     //- router-view
     div.container
       app-header
-      router-view
+      v-touch(v-on:swipeleft="onSwipeLeft" v-on:swiperight="swiperight")
+        router-view
       app-footer
 </template>
 
@@ -11,12 +12,26 @@
 import Header from './components/header/Header'
 import Index from './components/index/Index'
 import Footer from './components/footer/Footer'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'app',
   components: {
     'app-header': Header,
     'app-index': Index,
     'app-footer': Footer
+  },
+  computed: mapGetters({
+    navbar: 'navbar'
+  }),
+  methods: {
+    onSwipeLeft: function () {
+      this.$store.dispatch('addNavbarIndex')
+      this.$router.push(this.navbar.initData[this.navbar.index].path)
+    },
+    swiperight: function () {
+      this.$store.dispatch('subNavbarIndex')
+      this.$router.push(this.navbar.initData[this.navbar.index].path)
+    }
   }
 }
 </script>

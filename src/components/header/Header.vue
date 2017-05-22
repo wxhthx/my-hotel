@@ -6,27 +6,40 @@ header(v-bind:class="{'showModal': collapseFlag}")
     div.collapse.navbar-collapse(v-bind:class="{'show': collapseFlag}")
       div.navbar-brand.logoName 栖居吧
       ul.navbar-nav.mr-auto.mt-2.mt-lg-0
-        li.navbar-item.nav-item(v-for="(item, index) in navbar" @click="collapseFlag = false")
+        li.navbar-item.nav-item(v-for="(item, index) in navbar.initData" @click="selectItem(index)")
           router-link.menu-item.nav-link(v-bind:to="item.path") {{item.text}}
       form.form-inline
-        div.logo logo
+        div.logo
+          img(src="../../assets/images/logo.jpg")
         button.btn.btn-primary.btn-login 登录
         button.btn.btn-primary.btn-submit 注册
 </template>
 <script>
+import { mapGetters, mapActions } from 'vuex'
+
 export default {
   data () {
     return {
-      navbar: [{text: '首页', checked: true, path: 'index'},
-            {text: '详细数据', checked: false, path: 'details'},
-            {text: '我的信息', checked: false, path: 'mine'}],
-      navbarActiveIndex: 0,
+      // navbar: [{text: '首页', checked: true, path: 'index'},
+      //       {text: '详细数据', checked: false, path: 'details'},
+      //       {text: '我的信息', checked: false, path: 'mine'}],
+      // navbarActiveIndex: 0,
       collapseFlag: false
     }
   },
+  computed: mapGetters({
+    navbar: 'navbar'
+  }),
   methods: {
     collapseNavbar: function () {
       this.collapseFlag = !this.collapseFlag
+    },
+    /**
+     *  点击导航栏改变系统信息
+     */
+    selectItem: function (index) {
+      this.collapseFlag = false
+      this.$store.dispatch('setNavbarIndex', index)
     }
   }
 }
@@ -49,6 +62,10 @@ export default {
 .logo {
   height: 50px;
   color: white;
+  img {
+    width: 200px;
+    height: 50px;
+  }
 }
 .logo {
   width: 200px;
