@@ -12,5 +12,9 @@ export default {
 </script>
 
 <style lang="scss">
-
+    .mine {
+        width: 100%;
+        height: 600px;
+        background: #86C166;
+    }
 </style>

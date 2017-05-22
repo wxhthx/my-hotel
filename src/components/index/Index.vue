@@ -1,20 +1,21 @@
 
 <template lang="jade">
-  div.content
-    index-playpng
-    index-content           
+div.content
+  index-playpng
+  index-content           
 </template>
 <script>
 import Content from './content/Content'
 import Playpng from './playpng/Playpng'
+import { mapGetters, mapActions } from 'vuex'
 export default {
   name: 'index',
   data () {
     return {
     }
   },
-  methods: {
-  },
+  computed: mapGetters({
+  }),
   components: {
     'index-content': Content,
     'index-playpng': Playpng
