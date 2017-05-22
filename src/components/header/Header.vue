@@ -5,7 +5,7 @@ header(v-bind:class="{'showModal': collapseFlag}")
       span.navbar-toggler-icon
     div.collapse.navbar-collapse(v-bind:class="{'show': collapseFlag}")
       div.navbar-brand.logoName 栖居吧
-      ul.navbar-nav.mr-auto.mt-2.mt-lg-0
+      ul.navbar-nav.mr-auto.mt-2.mt-lg-0.navbar-ul
         li.navbar-item.nav-item(v-for="(item, index) in navbar.initData" @click="selectItem(index)")
           router-link.menu-item.nav-link(v-bind:to="item.path") {{item.text}}
       form.form-inline
@@ -85,7 +85,11 @@ export default {
   .navbar {
     text-align: left;
     & ul{
+      &.navbar-ul {
+        margin-bottom: 10px;
+      }
       .navbar-item {
+        border-bottom: 1px dotted #DAC9A6;
         & .menu-item {
           &.active, &:focus, &:hover {
             font-size: 1.1em; 
