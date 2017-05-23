@@ -1,0 +1,99 @@
+<template lang="jade">
+  div.hotel-container
+    div.login-bg
+    div.login-wrapper
+        form.hotel-login
+            div.form-group.row
+                label.col-4.col-form-label.align-left(for="name") 用户名
+                div.col-sm-8
+                    input.form-control.hotel-input(type="text" id="name" v-model="name" required maxlength="5")
+            div.form-group.row
+                label.col-4.col-form-label.align-left(for="password") 密码
+                div.col-sm-8
+                    input.form-control.hotel-input(type="password" id="password" v-model="password")
+            div.form-group.row
+                button.btn.btn-primary.col-12.btn-login-submit(type="submit" @click="submit") 登录
+    div.login-footer
+        login-footer
+</template>
+<script>
+import Footer from '../footer/Footer'
+export default {
+  data () {
+      return {
+          name: '',
+          password: ''
+      }
+  },
+  methods: {
+     submit: function () {
+         this.$router.push('hotel/index')
+     }
+  },
+  components: {
+      'login-footer': Footer
+  }
+}
+</script>
+
+<style lang="scss" scoped>
+$btn-font-color: #757575;
+%login-vertical-middle {
+    position: absolute;
+    top: 20%;
+    transform: translate(0, -20%);
+    // border-radius:5px;
+}
+.hotel-container {
+    margin-top: 100px;
+    width: 100%;
+    position: absolute;
+}
+.login-footer {
+    height: 100px;
+}
+.login-bg {
+    width: 100%;
+    height: 500px;
+    background: url(../../assets/images/hotel-login.jpg) no-repeat;
+    background-size: cover;
+    filter: blur(1px);
+}
+.login-wrapper {
+   @extend %login-vertical-middle;
+   right: 80px;
+   width: 400px;
+   height: 400px;
+   background: white;
+   .hotel-login {
+       margin: 0 30px;
+       @extend %login-vertical-middle;
+       .align-left {
+           text-align: left;
+       }
+   }
+}
+@media all and (max-width: 600px), (orientation:portrait){
+    .login-bg {
+        display: none;
+    }
+    .login-wrapper {
+        width: 80%;
+        .hotel-login {
+            position: relative;
+            top: 100%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+    .btn-login-submit {
+        width: 100%;
+        background: #fff;
+        border: 1px solid $btn-font-color;
+        height: 2em;
+        color: $btn-font-color;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
+}
+</style>

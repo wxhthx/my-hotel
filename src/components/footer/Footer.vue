@@ -18,18 +18,21 @@ export default {
 
 <style lang="scss" scoped>
 footer {
-  background: #BBDEFB;
+  
   width: 100%;
-  margin-top: 150px;
+  margin-top: 80px;
+  padding-top: 20px;
   display: block;
   height: 30px;
   text-align: center;
+  border-top: 1px solid #BBDEFB;
   .copyright {
     margin-right: 20px;
   }
 }
 @media all and (max-width: 600px), (orientation:portrait){
 footer {
+    background: #BBDEFB;
     position: fixed;
     left: 0px;
     bottom: 0px;

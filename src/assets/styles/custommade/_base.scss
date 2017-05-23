@@ -4,6 +4,12 @@
  a, a:focus, a:hover, a:active {
    text-decoration: none;
  }
+ .hotel-input {
+  border: 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 0;
+ }
+
  @font-face {font-family: "iconfont";
   // src: url('../../iconfont/iconfont.eot?t=1495507826600'); /* IE9*/
   // src: url('iconfont/iconfont.eot?t=1495507826600#iefix') format('embedded-opentype'), /* IE6-IE8 */
