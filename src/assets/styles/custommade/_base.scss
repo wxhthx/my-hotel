@@ -4,4 +4,24 @@
  a, a:focus, a:hover, a:active {
    text-decoration: none;
  }
- 
+ @font-face {font-family: "iconfont";
+  // src: url('../../iconfont/iconfont.eot?t=1495507826600'); /* IE9*/
+  // src: url('iconfont/iconfont.eot?t=1495507826600#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  // url('../../iconfont/iconfont.woff?t=1495507826600') format('woff'), /* chrome, firefox */
+  // url('../../iconfont/iconfont.ttf?t=1495507826600') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  // url('../../iconfont/iconfont.svg?t=1495507826600#iconfont') format('svg'); /* iOS 4.1- */
+  font-family: 'iconfont';  /* project id 309039 */
+  src: url('//at.alicdn.com/t/font_7nia7ki7mnyaatt9.eot');
+  src: url('//at.alicdn.com/t/font_7nia7ki7mnyaatt9.eot?#iefix') format('embedded-opentype'),
+  url('//at.alicdn.com/t/font_7nia7ki7mnyaatt9.woff') format('woff'),
+  url('//at.alicdn.com/t/font_7nia7ki7mnyaatt9.ttf') format('truetype'),
+  url('//at.alicdn.com/t/font_7nia7ki7mnyaatt9.svg#iconfont') format('svg');
+}
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size: 3em;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
