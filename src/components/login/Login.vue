@@ -1,6 +1,9 @@
 <template lang="jade">
   div.hotel-container
     div.login-bg
+    div.header
+        div.btns-div
+            button.btn.btn-primary.btn-register(type="submit" @click="register") 注册
     div.login-wrapper
         form.hotel-login
             div.form-group.row
@@ -28,6 +31,9 @@ export default {
   methods: {
      submit: function () {
          this.$router.push('hotel/index')
+     },
+     register: function () {
+         this.$router.push('/register')
      }
   },
   components: {
@@ -44,10 +50,26 @@ $btn-font-color: #757575;
     transform: translate(0, -20%);
     // border-radius:5px;
 }
+%btn-custom {
+    background: #fff;
+    border: 1px solid $btn-font-color;
+    height: 2em;
+    color: $btn-font-color;
+    font-size: 1em;
+}
 .hotel-container {
     margin-top: 100px;
     width: 100%;
     position: absolute;
+}
+.header {
+    width: 100%;
+    position: absolute;
+    top: -40px;
+    right: 20px;
+    .btns-div {
+        float: right;
+    }
 }
 .login-footer {
     height: 100px;
@@ -73,7 +95,18 @@ $btn-font-color: #757575;
        }
    }
 }
+.btn-register {
+    @extend %btn-custom;
+}
 @media all and (max-width: 600px), (orientation:portrait){
+    %btn-modeia-custom {
+        background: #fff;
+        border: 1px solid $btn-font-color;
+        height: 2em;
+        color: $btn-font-color;
+        font-size: 1.5em;
+        font-weight: 400;
+    }
     .login-bg {
         display: none;
     }
@@ -88,12 +121,7 @@ $btn-font-color: #757575;
     }
     .btn-login-submit {
         width: 100%;
-        background: #fff;
-        border: 1px solid $btn-font-color;
-        height: 2em;
-        color: $btn-font-color;
-        font-size: 1.5em;
-        font-weight: 400;
+        @extend %btn-modeia-custom;
     }
 }
 </style>

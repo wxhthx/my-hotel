@@ -6,6 +6,7 @@ import Hotel from '@/components/hotel/Hotel'
 import Index from '@/components/index/Index'
 import Details from '@/components/details/Details'
 import Mine from '@/components/mine/Mine'
+import Register from '@/components/register/Register'
 Vue.use(Router)
 
 export default new Router({
@@ -21,6 +22,10 @@ export default new Router({
     {
       path: '/hello',
       component: Hello
+    },
+    {
+      path: '/register',
+      component: Register
     },
     {
       path: '/hotel',

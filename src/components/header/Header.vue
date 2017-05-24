@@ -11,8 +11,8 @@ header(v-bind:class="{'showModal': collapseFlag}")
       form.form-inline
         div.logo
           img(src="../../assets/images/logo.jpg")
-        button.btn.btn-primary.btn-login 登录
-        button.btn.btn-primary.btn-submit 注册
+        button.btn.btn-primary.btn-login(@click="login") 登录
+        button.btn.btn-primary.btn-submit(@click="register") 注册
 </template>
 <script>
 import { mapGetters, mapActions } from 'vuex'
@@ -40,6 +40,12 @@ export default {
     selectItem: function (index) {
       this.collapseFlag = false
       this.$store.dispatch('setNavbarIndex', index)
+    },
+    login: function () {
+      this.$router.push('/login')
+    },
+    register: function () {
+      this.$router.push('/register')
     }
   }
 }
