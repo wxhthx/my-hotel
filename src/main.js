@@ -6,8 +6,8 @@ import router from './router'
 import Vuex from 'vuex'
 import VueTouch from 'vue-touch'
 import store from './store/index'
-Vue.use(VueTouch, {name: 'v-touch'}).use(Vuex)
-
+import plugin from './validate/install'
+Vue.use(VueTouch, {name: 'v-touch'}).use(Vuex).use(plugin, {name: 'v-validate'})
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */

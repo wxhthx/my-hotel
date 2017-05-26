@@ -52,9 +52,9 @@ $feature-content-height: ($index-content-height / 4);
   %inline-div {
     width: 45%;
     display: inline-block;
-    height: 70%;
+    height: 90%;
     margin: 10px;
-    font-size: 3.6em;
+    font-size: 4.8em;
     line-height: 1.1em;
     padding: 10px;
     color: #fff;

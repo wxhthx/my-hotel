@@ -1,5 +1,5 @@
 <template lang="jade">
-  div.container
+  div.container.mobile-container
       app-header
       div.turn_left.iconfont
         a(@click="onSwiperight")
@@ -37,10 +37,10 @@ export default {
 }
 </script>
 <style lang="scss" scoped>
-$hori-offset: -1em;
+$hori-offset: 0;
 
 %div_turn {
-  position: absolute;
+  position: fixed;
   top: 50%;
 }
 

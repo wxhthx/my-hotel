@@ -6,15 +6,15 @@
             button.btn.btn-primary.btn-register(type="submit" @click="register") 注册
     div.login-wrapper
         form.hotel-login
-            div.form-group.row
+            div.form-group.row.mobile-row
                 label.col-4.col-form-label.align-left(for="name") 用户名
                 div.col-sm-8
                     input.form-control.hotel-input(type="text" id="name" v-model="name" required maxlength="5")
-            div.form-group.row
+            div.form-group.row.mobile-row
                 label.col-4.col-form-label.align-left(for="password") 密码
                 div.col-sm-8
                     input.form-control.hotel-input(type="password" id="password" v-model="password")
-            div.form-group.row
+            div.form-group.row.mobile-row
                 button.btn.btn-primary.col-12.btn-login-submit(type="submit" @click="submit") 登录
     div.login-footer
         login-footer
@@ -110,8 +110,12 @@ $btn-font-color: #757575;
     .login-bg {
         display: none;
     }
+    .mobile-row {
+        margin-bottom: 4rem;
+    }
     .login-wrapper {
         width: 80%;
+        transform: translate(0);
         .hotel-login {
             position: relative;
             top: 100%;

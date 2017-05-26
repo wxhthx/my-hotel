@@ -87,6 +87,7 @@ export default {
     background: #EEEEEE;
     // opacity: 0.3;
     width: 100%;
+    z-index: 1000;
   }
   .navbar {
     text-align: left;
