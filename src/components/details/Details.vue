@@ -2,6 +2,9 @@
   div.details 详细信息
     div.sun-container
       div.sun
+        div.brow.left-brow
+        div.brow.right-brow
+        div.smile
         div.shine.left
         div.shine.left-top
         div.shine.top
@@ -40,11 +43,35 @@ export default {
       border-radius: 50%;
       background: orangered;
       position: relative;
-      animation: rotateSun 4s linear infinite;
+      animation: rotateSun 4s linear 1;
     }
     %vertical {
       width: 0;
       height: 50px;
+    }
+    %brow-simle-common {
+      width: 100px;
+      height: 100px;
+      background: transparent;
+      border: 0;
+      position: absolute;
+      left: 5%;
+    }
+    div.brow {
+      @extend %brow-simle-common;
+      border-top: 3px solid #fff;
+      border-radius: 40%;    
+      top: 20%;
+      &.right-brow {
+        left: 55%;
+      }
+    }
+    div.smile {
+      @extend %brow-simle-common;
+      border-bottom: 3px solid #fff;
+      border-radius: 50%;
+      top: 50%;  
+      left: 30%;
     }
     div.shine {
       width: 50px;
@@ -52,38 +79,38 @@ export default {
       border: 2px dotted #000;
       position: absolute;
       &.left {
-        left: -25%;
+        left: -55px;
         top: 50%;
       }
       &.left-top {
-        transform: skewY(45deg);
+        transform: rotate(45deg);
       }
       &.top {
         @extend %vertical;
         left: 50%;
-        top: -25%;
+        top: -55px;
       }
       &.top-right {
-        transform: skewY(125deg);
+        transform: rotate(125deg);
         left: 75%;
         top: -10%;
       }
       &.right {
-        left: 105%;
+        left: 101%;
         top: 50%;
       }
       &.bottom {
         @extend %vertical;
         left: 50%;
-        top: 105%;
+        top: 101%;
       }
       &.bottom-right {
-        transform: skewY(45deg);
+        transform: rotate(45deg);
         top: 100%;
         left: 95%;
       }
       &.bottom-left {
-        transform: skewY(125deg);
+        transform: rotate(125deg);
         left: 0;
         top: 105%;
       }
